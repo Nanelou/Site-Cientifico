@@ -15,7 +15,18 @@
         Educação Digital e Programação | Ciêntificando com IFAS
     </title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
@@ -32,9 +43,6 @@
     <header>
 
         <div class="header-conteudo">
-
-
-            <!-- LOGO -->
 
             <a href="index.html"
                class="logo"
@@ -58,31 +66,33 @@
             </a>
 
 
-            <!-- BOTÃO MOBILE -->
-
             <button
                 class="botao-menu"
                 id="botaoMenu"
                 type="button"
                 aria-label="Abrir menu"
-                aria-expanded="false">
+                aria-expanded="false"
+                aria-controls="menuPrincipal">
 
                 ☰
 
             </button>
 
 
-            <!-- MENU -->
-
             <nav class="menu"
+                 id="menuPrincipal"
                  aria-label="Menu principal">
 
                 <a href="index.html">
                     Início
                 </a>
 
-                <a href="educacaodigital.html">
+                <a href="educacaodigital.html"
+                   class="ativo"
+                   aria-current="page">
+
                     Educação Digital
+
                 </a>
 
                 <a href="tecnociencia.html">
@@ -102,32 +112,48 @@
 
 
     <!-- =====================================================
-         HERO
+         CONTEÚDO PRINCIPAL
          ===================================================== -->
 
     <main>
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
 
         <section class="hero hero-pagina">
 
             <div class="hero-conteudo">
 
-                <div class="linha-destaque"></div>
+                <div>
 
-                <h1>
-                    Educação Digital
-                    <br>
-                    <span>e Programação</span>
-                </h1>
-               
-                        <figure class="foto-galeria">
-                        <img src="img/20260330_105639.jpg" alt="alunos pesquisando para montar o site">
-                             
+                    <div class="linha-destaque"></div>
 
-                        <figcaption>
-                            Alunos pesquisando para elaborar o site científico
-                        </figcaption>
+                    <h1>
+                        Educação Digital
+                        <br>
+                        <span>e Programação</span>
+                    </h1>
 
-                    </figure>
+                </div>
+
+
+                <!-- FOTO -->
+
+                <figure class="foto-galeria">
+
+                    <img
+                        src="img/20260330_105639.jpg"
+                        alt="Alunos pesquisando para elaborar o site científico">
+
+                    <figcaption>
+                        Alunos pesquisando para elaborar o site científico
+                    </figcaption>
+
+                </figure>
+
+
                 <p>
                     A tecnologia como instrumento de aprendizagem,
                     criatividade, pesquisa, programação e construção
@@ -169,22 +195,32 @@
                 </p>
 
                 <p>
-                    No projeto <strong>Ciêntificando com IFAS</strong>, os recursos digitais foram utilizados 
-                    como ferramentas para pesquisar, organizar informações, produzir conteúdos, 
-                    desenvolver páginas web e compartilhar os conhecimentos construídos durante as atividades.
-                    Durante o trimestre, os alunos foram informados sobre o projeto que seria desenvolvido e 
-                    sobre as etapas que deveriam ser realizadas ao longo do processo. 
-                    A proposta teve como objetivo promover o uso consciente e criativo das tecnologias digitais, 
-                    estimulando a pesquisa, a produção de conteúdos e a construção coletiva do conhecimento.
- 
+                    No projeto <strong>Ciêntificando com IFAS</strong>,
+                    os recursos digitais foram utilizados como
+                    ferramentas para pesquisar, organizar informações,
+                    produzir conteúdos, desenvolver páginas web e
+                    compartilhar os conhecimentos construídos durante
+                    as atividades.
                 </p>
 
                 <p>
-                    Assim os alunos da 2ª Série C e D utilizaram ferramentas
-                    tecnológicas, na busca  em compreender como
-                    a tecnologia está presente na sociedade e como
-                    pode ser utilizada para solucionar problemas,
-                    ampliar a comunicação e favorecer a aprendizagem.
+                    Durante o trimestre, os alunos foram informados
+                    sobre o projeto que seria desenvolvido e sobre
+                    as etapas que deveriam ser realizadas ao longo
+                    do processo. A proposta teve como objetivo
+                    promover o uso consciente e criativo das
+                    tecnologias digitais, estimulando a pesquisa,
+                    a produção de conteúdos e a construção coletiva
+                    do conhecimento.
+                </p>
+
+                <p>
+                    Assim, os alunos da <strong>2ª Série C e D</strong>
+                    utilizaram ferramentas tecnológicas na busca
+                    por compreender como a tecnologia está presente
+                    na sociedade e como pode ser utilizada para
+                    solucionar problemas, ampliar a comunicação e
+                    favorecer a aprendizagem.
                 </p>
 
             </div>
@@ -264,8 +300,6 @@
             <div class="info-grid">
 
 
-                <!-- PESQUISA DIGITAL -->
-
                 <article class="info-card">
 
                     <span class="icone-grande">
@@ -286,8 +320,6 @@
                 </article>
 
 
-                <!-- PENSAMENTO COMPUTACIONAL -->
-
                 <article class="info-card">
 
                     <span class="icone-grande">
@@ -306,8 +338,6 @@
 
                 </article>
 
-
-                <!-- INTELIGÊNCIA ARTIFICIAL -->
 
                 <article class="info-card">
 
@@ -328,8 +358,6 @@
                 </article>
 
 
-                <!-- CIDADANIA DIGITAL -->
-
                 <article class="info-card">
 
                     <span class="icone-grande">
@@ -349,8 +377,6 @@
                 </article>
 
 
-                <!-- ACESSIBILIDADE -->
-
                 <article class="info-card">
 
                     <span class="icone-grande">
@@ -369,8 +395,6 @@
 
                 </article>
 
-
-                <!-- CRIATIVIDADE -->
 
                 <article class="info-card">
 
@@ -397,10 +421,10 @@
 
 
         <!-- =================================================
-             SEÇÃO 04
+             SEÇÃO 04 — PROGRAMAÇÃO
              ================================================= -->
 
-        <section class="secao">
+        <section class="secao secao-azul">
 
             <div class="titulo-secao">
 
@@ -408,86 +432,168 @@
                     04
                 </span>
 
-                <h2>
-                    Programação e desenvolvimento web
-                </h2>
+                <div>
+
+                    <small>
+                        TECNOLOGIA
+                    </small>
+
+                    <h2>
+                        Programação e desenvolvimento web
+                    </h2>
+
+                </div>
 
             </div>
 
 
             <div class="conteudo-area">
 
-                <p>
-                    A programação foi utilizada como uma das
-                    ferramentas para transformar as ideias dos
-                    estudantes em produtos digitais.
-                </p>
 
-                <p>
-                    Na construção do site <strong>Ciêntificando com
-                    IFAS</strong>, foram utilizados conhecimentos
-                    relacionados ao desenvolvimento de páginas web.
-                </p>
+                <div class="programacao-introducao">
+
+                    <p>
+                        A programação foi utilizada como uma das
+                        ferramentas para transformar as ideias dos
+                        estudantes em produtos digitais.
+                    </p>
+
+                    <p>
+                        Na construção do site
+                        <strong>Ciêntificando com IFAS</strong>,
+                        foram utilizados conhecimentos relacionados
+                        ao desenvolvimento de páginas web, permitindo
+                        que os estudantes compreendessem como uma
+                        página da internet é estruturada, organizada
+                        e apresentada ao usuário.
+                    </p>
+
+                    <p>
+                        Durante as atividades, os estudantes tiveram
+                        contato com diferentes linguagens e tecnologias
+                        utilizadas no desenvolvimento web.
+                    </p>
+
+                </div>
 
 
-                <div class="info-grid">
+                <!-- =================================================
+                     TECNOLOGIAS
+                     ================================================= -->
+
+                <div class="programacao-grid">
 
 
-                    <article class="info-card">
+                    <!-- HTML -->
 
-                        <span class="icone-grande">
+                    <article class="programacao-card">
+
+                        <div class="codigo-icone">
                             HTML
-                        </span>
+                        </div>
 
                         <h3>
                             HTML
                         </h3>
 
                         <p>
-                            Utilizado para estruturar os conteúdos
-                            das páginas, organizando títulos,
-                            textos, imagens, links e seções.
+                            O <strong>HTML</strong> foi utilizado para
+                            estruturar os conteúdos das páginas,
+                            organizando títulos, textos, imagens,
+                            links, menus e diferentes seções do site.
+                        </p>
+
+                        <p>
+                            Os estudantes puderam compreender que
+                            o HTML funciona como a estrutura básica
+                            de uma página web.
                         </p>
 
                     </article>
 
 
-                    <article class="info-card">
+                    <!-- CSS -->
 
-                        <span class="icone-grande">
+                    <article class="programacao-card">
+
+                        <div class="codigo-icone">
                             CSS
-                        </span>
+                        </div>
 
                         <h3>
                             CSS
                         </h3>
 
                         <p>
-                            Utilizado para definir a aparência das
-                            páginas, trabalhando cores, tamanhos,
-                            espaçamentos, organização e responsividade.
+                            O <strong>CSS</strong> foi utilizado para
+                            definir a aparência das páginas,
+                            trabalhando cores, fontes, tamanhos,
+                            espaçamentos, alinhamento, organização
+                            das imagens e responsividade.
+                        </p>
+
+                        <p>
+                            Dessa forma, os estudantes puderam perceber
+                            como o design contribui para tornar uma
+                            página mais organizada, acessível e
+                            agradável para o usuário.
                         </p>
 
                     </article>
 
 
-                    <article class="info-card">
+                    <!-- JAVASCRIPT -->
 
-                        <span class="icone-grande">
+                    <article class="programacao-card">
+
+                        <div class="codigo-icone">
                             JS
-                        </span>
+                        </div>
 
                         <h3>
                             JavaScript
                         </h3>
 
                         <p>
-                            Utilizado para acrescentar interatividade
-                            às páginas e tornar a experiência do
-                            usuário mais dinâmica.
+                            O <strong>JavaScript</strong> foi utilizado
+                            para acrescentar interatividade às páginas
+                            e tornar a experiência do usuário mais
+                            dinâmica.
+                        </p>
+
+                        <p>
+                            A linguagem possibilita criar ações,
+                            respostas aos comandos do usuário e
+                            diferentes recursos interativos.
                         </p>
 
                     </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     APRENDIZAGEM
+                     ================================================= -->
+
+                <div class="sobre-texto"
+                     style="margin-top: 35px;">
+
+                    <p>
+                        O desenvolvimento do site possibilitou aos
+                        estudantes compreender que a programação não
+                        está relacionada apenas à escrita de códigos,
+                        mas também à organização de informações,
+                        resolução de problemas, criatividade e
+                        construção de soluções digitais.
+                    </p>
+
+                    <p>
+                        Ao criar e organizar as páginas, os estudantes
+                        puderam aplicar conhecimentos de pesquisa,
+                        produção textual, design, tecnologia e
+                        programação em uma produção concreta.
+                    </p>
 
                 </div>
 
@@ -498,7 +604,7 @@
 
 
         <!-- =================================================
-             SEÇÃO 05 - PROFESSORA
+             SEÇÃO 05 — PROFESSORA
              ================================================= -->
 
         <section class="secao">
@@ -519,8 +625,6 @@
             <div class="perfil-professora">
 
 
-                <!-- FOTO À ESQUERDA -->
-
                 <div class="foto-professora">
 
                     <img
@@ -530,8 +634,6 @@
 
                 </div>
 
-
-                <!-- TEXTOS À DIREITA -->
 
                 <div class="texto-professora">
 
@@ -602,8 +704,8 @@
 
                 <p>
                     A proposta da Educação Digital no projeto é
-                    baseada na aprendizagem pela prática. Os
-                    estudantes participam das diferentes etapas
+                    baseada na aprendizagem pela prática.
+                    Os estudantes participam das diferentes etapas
                     do processo, desde a pesquisa e organização
                     das informações até a produção e divulgação
                     dos conteúdos.
@@ -630,7 +732,7 @@
 
 
         <!-- =================================================
-             CHAMADA PARA OUTRAS ÁREAS
+             OUTRAS ÁREAS
              ================================================= -->
 
         <section class="secao">
@@ -662,9 +764,8 @@
                         à Física, tecnologia e sociedade.
                     </p>
 
-                    <a
-                        href="tecnociencia.html"
-                        class="botao">
+                    <a href="tecnociencia.html"
+                       class="botao">
 
                         Conhecer
 
@@ -684,9 +785,8 @@
                         sustentabilidade e à Feira de Ciências.
                     </p>
 
-                    <a
-                        href="sustentabilidade.html"
-                        class="botao">
+                    <a href="sustentabilidade.html"
+                       class="botao">
 
                         Conhecer
 
@@ -707,9 +807,8 @@
                         para solucionar problemas.
                     </p>
 
-                    <a
-                        href="robotica.html"
-                        class="botao">
+                    <a href="robotica.html"
+                       class="botao">
 
                         Conhecer
 
@@ -759,10 +858,6 @@
 
 </div>
 
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
 
 <script src="script.js"></script>
 
