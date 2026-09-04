@@ -1756,7 +1756,7 @@ footer p,
 /* Imagem ocupa toda a área do cartão */
 .foto-item img {
     display: block;
-    width: 100%;
+    width: 80%;
     height: 100%;
 
     object-fit: cover;
