@@ -816,17 +816,21 @@ strong {
 
 .revista-digital img {
     display: block;
+
     width: 100%;
-    max-width: 520px;
-    max-height: 620px;
+    max-width: 280px;
+    max-height: 280px;
+
     margin: 0 auto;
+
     object-fit: contain;
-    border-radius: 14px;
+    background: #ffffff;
     border: 1px solid var(--borda);
+    border-radius: 14px;
     box-shadow: var(--sombra);
-    background: #fff;
-    cursor: zoom-in;
 }
+
+
 
 .legenda-revista {
     max-width: 700px;
@@ -1710,7 +1714,6 @@ footer p,
     }
 /* =========================================================
    CORREÇÃO FINAL DA GALERIA
-   Cole este bloco no final do arquivo style.css
    ========================================================= */
 
 .secao.galeria {
