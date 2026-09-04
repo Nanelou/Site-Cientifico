@@ -730,6 +730,68 @@ strong {
 }
 
 
+
+
+/* =========================================================
+   12.1 REVISTA DIGITAL – SOCIOLOGIA I
+   A participação em Sociologia é apresentada como registro
+   formativo, sem alterar o escopo das áreas científicas do site.
+   ========================================================= */
+
+.area-sociologia {
+    grid-column: 1 / -1;
+}
+
+.area-sociologia h5 {
+    color: var(--turquesa);
+    font-size: 1rem;
+    line-height: 1.35;
+    margin: 0 0 16px;
+}
+
+.area-grupo-conteudo {
+    width: 100%;
+}
+
+.revista-digital {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borda);
+}
+
+.revista-digital img {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    max-height: 620px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 14px;
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    background: #fff;
+    cursor: zoom-in;
+}
+
+.legenda-revista {
+    max-width: 700px;
+    margin: 14px auto 0;
+    text-align: center !important;
+    color: var(--texto-suave);
+    font-size: .95rem;
+}
+
+@media (max-width: 700px) {
+    .area-sociologia {
+        grid-column: auto;
+    }
+
+    .revista-digital img {
+        max-height: 520px;
+    }
+}
+
+
 /* =========================================================
    13. ÁREA DE PROGRAMAÇÃO
    ========================================================= */
