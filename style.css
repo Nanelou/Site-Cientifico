@@ -1,7 +1,8 @@
 /* =========================================================
    CIÊNTIFICANDO COM IFAS
-   STYLE.CSS
+   STYLE.CSS — ORGANIZADO, RESPONSIVO E ACESSÍVEL
    Colégio Estadual Professor Gabriel Rosa
+   Curiúva - Paraná
    ========================================================= */
 
 
@@ -24,10 +25,14 @@
 
     --texto: #173042;
     --texto-suave: #526875;
+
     --borda: #d4e7ec;
 
-    --sombra: 0 12px 35px rgba(7, 59, 92, 0.12);
+    --sombra:
+        0 12px 35px rgba(7, 59, 92, .12);
+
     --raio: 20px;
+
     --largura: 1180px;
 }
 
@@ -47,11 +52,18 @@ html {
 }
 
 body {
-    font-family: "Atkinson Hyperlegible", Arial, Helvetica, sans-serif;
+    font-family:
+        "Atkinson Hyperlegible",
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: var(--fundo);
     color: var(--texto);
-    font-size: 18px;
+
     line-height: 1.7;
+    font-size: 18px;
+
     overflow-x: hidden;
 }
 
@@ -67,12 +79,11 @@ a {
 
 button {
     font: inherit;
-    cursor: pointer;
 }
 
 .site-shell {
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
 }
 
 
@@ -80,145 +91,190 @@ button {
    3. CABEÇALHO
    ========================================================= */
 
+header,
 .cabecalho {
     position: sticky;
     top: 0;
     z-index: 1000;
 
+    width: 100%;
+
+    background: rgba(255, 255, 255, .97);
+
+    border-bottom:
+        1px solid var(--borda);
+
+    box-shadow:
+        0 4px 20px rgba(7, 59, 92, .08);
+
+    backdrop-filter: blur(10px);
+}
+
+.header-conteudo {
+    width:
+        min(
+            var(--largura),
+            calc(100% - 40px)
+        );
+
+    margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 24px;
 
-    width: 100%;
-    padding: 12px max(20px, calc((100% - var(--largura)) / 2));
-
-    background: rgba(255, 255, 255, 0.97);
-    border-bottom: 1px solid var(--borda);
-    box-shadow: 0 4px 20px rgba(7, 59, 92, 0.08);
-    backdrop-filter: blur(10px);
+    padding: 12px 0;
 }
 
 
 /* =========================================================
-   4. LOGO
+   LOGO
    ========================================================= */
 
 .logo {
     display: flex;
     align-items: center;
+
     gap: 14px;
+
     min-width: 0;
 }
 
 .logo img {
     width: 64px;
     height: 64px;
-    flex-shrink: 0;
 
     object-fit: contain;
+
     border-radius: 14px;
+
+    flex-shrink: 0;
 }
 
 .logo-texto {
     display: flex;
     flex-direction: column;
+
     min-width: 0;
 }
 
-.logo-texto h1 {
+.logo-texto h1,
+.logo-texto strong {
     color: var(--azul-900);
+
     font-size: 1.35rem;
-    font-weight: 900;
+
     line-height: 1.1;
+
+    font-weight: 900;
 }
 
-.logo-texto p {
-    margin-top: 4px;
-    margin-bottom: 0;
-
+.logo-texto p,
+.logo-texto span {
     color: var(--texto-suave);
-    font-size: 0.85rem;
+
+    font-size: .85rem;
+
     line-height: 1.25;
+
+    margin-top: 4px;
 }
 
 .linha-destaque {
     width: 82px;
     height: 5px;
+
     margin-top: 7px;
 
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--ciano), var(--verde));
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ciano),
+            var(--verde)
+        );
 }
 
 
 /* =========================================================
-   5. MENU
+   4. MENU
    ========================================================= */
 
 .menu {
     display: flex;
+
     align-items: center;
     justify-content: flex-end;
+
     flex-wrap: wrap;
+
     gap: 6px;
 }
 
 .menu a {
+    color: var(--azul-900);
+
+    font-weight: 800;
+    font-size: .95rem;
+
     padding: 10px 13px;
 
-    color: var(--azul-900);
     border-radius: 12px;
 
-    font-size: 0.95rem;
-    font-weight: 800;
-    transition: 0.25s ease;
+    transition: .25s ease;
 }
 
 .menu a:hover,
 .menu a.ativo {
     color: var(--branco);
+
     background: var(--azul-800);
+
     transform: translateY(-1px);
 }
 
 .botao-menu {
     display: none;
 
+    border: 0;
+
+    background: var(--azul-800);
+    color: #fff;
+
+    border-radius: 10px;
+
     padding: 8px 12px;
 
-    color: #ffffff;
-    background: var(--azul-800);
-    border: 0;
-    border-radius: 10px;
+    cursor: pointer;
 
     font-size: 1.5rem;
 }
 
 
 /* =========================================================
-   6. HERO
+   5. HERO
    ========================================================= */
 
 .hero {
     position: relative;
 
+    min-height: 520px;
+
     display: flex;
     align-items: center;
 
-    min-height: 520px;
-    overflow: hidden;
-
-    color: #ffffff;
     background:
         radial-gradient(
             circle at 85% 20%,
-            rgba(37, 201, 223, 0.35),
+            rgba(37, 201, 223, .35),
             transparent 28%
         ),
         radial-gradient(
             circle at 15% 80%,
-            rgba(185, 232, 75, 0.25),
+            rgba(185, 232, 75, .25),
             transparent 28%
         ),
         linear-gradient(
@@ -226,39 +282,217 @@ button {
             var(--azul-900),
             var(--azul-700)
         );
+
+    color: #fff;
+
+    overflow: hidden;
 }
 
 .hero::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
 
-    background: linear-gradient(
-        90deg,
-        rgba(7, 59, 92, 0.9),
-        rgba(7, 126, 164, 0.55)
-    );
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 59, 92, .9),
+            rgba(7, 126, 164, .55)
+        );
 }
 
 .hero-conteudo {
     position: relative;
     z-index: 1;
 
-    width: min(var(--largura), calc(100% - 40px));
+    width:
+        min(
+            var(--largura),
+            calc(100% - 40px)
+        );
+
     margin: auto;
+
     padding: 75px 0;
 }
 
-.hero .titulo-principal {
-    margin: 0 0 30px;
+.hero h1,
+.hero h2 {
+    max-width: 850px;
 
-    color: #ffffff;
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    margin: 15px 0 24px;
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            6.3rem
+        );
+
+    line-height: .98;
+
+    letter-spacing: -2px;
+
     font-weight: 900;
-    line-height: 0.94;
+
+    color: #fff;
+}
+
+.hero h1 span,
+.hero h2 span {
+    color: var(--verde);
+}
+
+.hero p {
+    max-width: 760px;
+
+    font-size: 1.25rem;
+
+    line-height: 1.65;
+
+    color: #f4ffff;
+
+    text-align: left;
+}
+
+.hero .etiqueta {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, .4);
+
+    border-radius: 999px;
+
+    font-size: .82rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    background:
+        rgba(255, 255, 255, .1);
+}
+
+.hero-fisica {
+    min-height: 480px;
+}
+
+
+/* =========================================================
+   HERO DA EDUCAÇÃO DIGITAL
+   As regras específicas estão no bloco de ajuste abaixo.
+   ========================================================= */
+
+.hero-pagina {
+    min-height: 560px;
+}
+
+/* =========================================================
+   AJUSTE — HERO DA EDUCAÇÃO DIGITAL
+   ========================================================= */
+
+.hero-pagina-grid {
+    position: relative;
+    z-index: 1;
+    width: min(var(--largura), calc(100% - 40px));
+    margin: auto;
+    padding: 70px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 520px);
+    align-items: center;
+    gap: clamp(35px, 5vw, 70px);
+}
+
+.hero-pagina-texto {
+    min-width: 0;
+}
+
+.hero-pagina-texto p {
+    max-width: 680px;
+}
+
+.hero-imagem-destaque {
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .28);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .20);
+    backdrop-filter: blur(5px);
+}
+
+.hero-imagem-destaque img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 17px;
+    border: 1px solid rgba(255, 255, 255, .35);
+}
+
+.hero-imagem-destaque figcaption {
+    padding: 10px 8px 2px;
+    color: rgba(255, 255, 255, .92);
+    text-align: center;
+    font-size: .88rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+    .hero-pagina-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-pagina-grid {
+        width: calc(100% - 36px);
+        padding: 50px 0 55px;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .hero-imagem-destaque {
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    .hero-imagem-destaque img {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+
+/* =========================================================
+   6. TÍTULO PRINCIPAL
+   ========================================================= */
+
+.hero .titulo-principal {
+    font-size:
+        clamp(
+            3.5rem,
+            8vw,
+            7rem
+        );
+
+    font-weight: 900;
+
+    line-height: .94;
+
     letter-spacing: -4px;
 
-    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.22);
+    margin: 0 0 30px;
+
+    color: #fff;
+
+    text-shadow:
+        0 5px 20px rgba(0, 0, 0, .22);
 }
 
 .hero .titulo-principal span {
@@ -267,51 +501,52 @@ button {
 
 .hero .titulo-principal::after {
     content: "";
+
     display: block;
 
     width: 135px;
     height: 7px;
+
     margin-top: 26px;
 
-    background: var(--ciano);
     border-radius: 20px;
-}
 
-.hero p {
-    max-width: 760px;
-    margin-bottom: 0;
-
-    color: #f4ffff;
-    font-size: 1.25rem;
-    line-height: 1.65;
-    text-align: left;
+    background: var(--ciano);
 }
 
 
 /* =========================================================
-   7. BOTÃO
+   7. BOTÕES
    ========================================================= */
 
 .botao {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     margin-top: 26px;
+
     padding: 12px 22px;
 
-    color: var(--azul-900);
-    background: var(--verde);
     border-radius: 13px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    background: var(--verde);
+
+    color: var(--azul-900);
 
     font-weight: 900;
-    transition: 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .15);
+
+    transition: .25s ease;
 }
 
 .botao:hover {
-    filter: brightness(1.05);
     transform: translateY(-2px);
+
+    filter: brightness(1.04);
 }
 
 
@@ -324,16 +559,36 @@ main {
 }
 
 .secao {
-    width: min(var(--largura), calc(100% - 40px));
+    width:
+        min(
+            var(--largura),
+            calc(100% - 40px)
+        );
+
     margin: 0 auto;
+
     padding: 72px 0;
 }
 
 .secao-azul {
     width: 100%;
     max-width: none;
-    padding-right: max(20px, calc((100% - var(--largura)) / 2));
-    padding-left: max(20px, calc((100% - var(--largura)) / 2));
+
+    padding-left:
+        max(
+            20px,
+            calc(
+                (100% - var(--largura)) / 2
+            )
+        );
+
+    padding-right:
+        max(
+            20px,
+            calc(
+                (100% - var(--largura)) / 2
+            )
+        );
 
     background: var(--fundo-azul);
 }
@@ -345,40 +600,57 @@ main {
 
 .titulo-secao {
     display: flex;
+
     align-items: flex-start;
+
     gap: 18px;
 
     margin-bottom: 32px;
 }
 
 .titulo-secao > span {
-    display: grid;
     flex: none;
-    place-items: center;
 
     min-width: 50px;
     height: 50px;
 
-    color: #ffffff;
-    background: var(--azul-800);
+    display: grid;
+    place-items: center;
+
     border-radius: 14px;
+
+    background: var(--azul-800);
+
+    color: #fff;
 
     font-weight: 900;
 }
 
 .titulo-secao h2 {
     color: var(--azul-900);
-    font-size: clamp(1.9rem, 4vw, 3rem);
-    font-weight: 900;
+
+    font-size:
+        clamp(
+            1.9rem,
+            4vw,
+            3rem
+        );
+
     line-height: 1.15;
+
+    font-weight: 900;
 }
 
-.descricao-galeria {
-    max-width: 900px;
-    margin-top: 14px;
-    margin-bottom: 0;
+.titulo-secao small {
+    display: block;
 
-    color: var(--texto-suave);
+    color: var(--turquesa);
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
 }
 
 
@@ -386,169 +658,154 @@ main {
    10. TEXTOS
    ========================================================= */
 
-p {
-    margin-bottom: 17px;
+.sobre-texto {
+    max-width: 1000px;
 }
 
 .secao p {
     text-align: justify;
+
     text-justify: inter-word;
+
+    margin-bottom: 17px;
+}
+
+p {
+    margin-bottom: 17px;
 }
 
 strong {
     color: var(--azul-900);
 }
 
-.hero strong,
-.rodape strong {
-    color: inherit;
-}
-
-.sobre-texto {
-    max-width: 1000px;
-}
-
 
 /* =========================================================
-   11. DESTAQUE INICIAL
+   11. CARDS
    ========================================================= */
 
-.info-card {
-    display: flex;
-    gap: 28px;
+.cards,
+.info-grid {
+    display: grid;
 
-    padding: 30px;
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
 
-    background: #ffffff;
-    border: 1px solid var(--borda);
+    gap: 24px;
+}
+
+.cards article,
+.info-card,
+.area-grupo {
+    background: #fff;
+
+    border:
+        1px solid var(--borda);
+
     border-radius: var(--raio);
+
     box-shadow: var(--sombra);
 }
 
-.info-numero {
-    display: grid;
-    flex: none;
-    place-items: center;
+.cards article {
+    padding: 30px;
 
-    width: 60px;
-    height: 60px;
+    display: flex;
 
-    color: #ffffff;
-    background: var(--azul-800);
-    border-radius: 16px;
+    flex-direction: column;
 
-    font-size: 1.2rem;
+    min-height: 270px;
+}
+
+.cards article h3,
+.info-grid article h3,
+.area-grupo h3 {
+    color: var(--azul-900);
+
+    font-size: 1.4rem;
+
+    line-height: 1.2;
+
+    margin: 12px 0;
+}
+
+.cards article p,
+.info-grid article p,
+.area-grupo p {
+    color: var(--texto-suave);
+}
+
+.cards article a {
+    margin-top: auto;
+
+    color: var(--azul-700);
+
     font-weight: 900;
 }
 
-.info-card h3 {
-    margin-bottom: 15px;
-    color: var(--azul-900);
-    font-size: 1.5rem;
-    line-height: 1.25;
+.card-icone,
+.icone-grande,
+.area-icone {
+    font-size: 2.4rem;
+
+    line-height: 1;
+}
+
+.info-grid .info-card {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 28px;
+
+    min-height: 220px;
 }
 
 
 /* =========================================================
-   12. PARTICIPAÇÃO E ÁREAS
+   12. ÁREAS DA HOME
    ========================================================= */
-
-.participacao {
-    margin-top: 30px;
-    padding: 28px;
-
-    background: var(--fundo-azul);
-    border-left: 6px solid var(--turquesa);
-    border-radius: 0 18px 18px 0;
-}
-
-.participacao h3 {
-    margin: 25px 0 10px;
-
-    color: var(--azul-900);
-    font-size: 1.45rem;
-    line-height: 1.25;
-}
-
-.participacao h3:first-child {
-    margin-top: 0;
-}
-
-.participacao h4 {
-    margin-bottom: 15px;
-    color: var(--turquesa);
-    font-size: 1.1rem;
-}
 
 .areas-grupos {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
 
-    margin-top: 25px;
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 24px;
 }
 
 .area-grupo {
     padding: 28px;
-
-    background: #ffffff;
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
-    box-shadow: var(--sombra);
 }
 
-.area-icone,
-.card-icone {
-    font-size: 2.4rem;
-    line-height: 1;
-}
 
-.area-grupo h4 {
-    margin: 14px 0 12px;
-
-    color: var(--azul-900);
-    font-size: 1.35rem;
-    line-height: 1.2;
-}
-
-.area-grupo p {
-    margin-bottom: 0;
-    color: var(--texto-suave);
-}
-
-.info-projetos {
-    margin-top: 28px;
-    padding: 25px;
-
-    background: #ffffff;
-    border: 1px solid var(--borda);
-    border-radius: 18px;
-    box-shadow: var(--sombra);
-}
-
-.info-projetos h3 {
-    margin-top: 0;
-}
 
 
 /* =========================================================
-   13. REVISTA DIGITAL
+   12.1 REVISTA DIGITAL – SOCIOLOGIA I
+   A participação em Sociologia é apresentada como registro
+   formativo, sem alterar o escopo das áreas científicas do site.
    ========================================================= */
 
 .area-sociologia {
     grid-column: 1 / -1;
 }
 
-.area-grupo-conteudo {
-    width: 100%;
-}
-
 .area-sociologia h5 {
-    margin: 0 0 16px;
-
     color: var(--turquesa);
     font-size: 1rem;
     line-height: 1.35;
+    margin: 0 0 16px;
+}
+
+.area-grupo-conteudo {
+    width: 100%;
 }
 
 .revista-digital {
@@ -558,50 +815,367 @@ strong {
 }
 
 .revista-digital img {
+    display: block;
     width: 100%;
     max-width: 520px;
     max-height: 620px;
     margin: 0 auto;
-
     object-fit: contain;
-    background: #ffffff;
-    border: 1px solid var(--borda);
     border-radius: 14px;
+    border: 1px solid var(--borda);
     box-shadow: var(--sombra);
+    background: #fff;
+    cursor: zoom-in;
 }
 
 .legenda-revista {
     max-width: 700px;
     margin: 14px auto 0;
-
-    color: var(--texto-suave);
-    font-size: 0.95rem;
     text-align: center !important;
+    color: var(--texto-suave);
+    font-size: .95rem;
 }
 
-.observacao {
-    margin-top: 20px !important;
-    color: var(--texto-suave);
+@media (max-width: 700px) {
+    .area-sociologia {
+        grid-column: auto;
+    }
+
+    .revista-digital img {
+        max-height: 520px;
+    }
 }
 
 
 /* =========================================================
-   14. GALERIA DE FOTOS
-   IMPORTANTE:
-   .galeria NÃO é uma grade.
-   A grade é apenas .galeria-grid.
+   13. ÁREA DE PROGRAMAÇÃO
    ========================================================= */
 
-.galeria {
+.conteudo-area {
+    display: block;
+
     width: 100%;
 }
 
-.galeria-grid {
+.conteudo-area > p {
+    max-width: 1000px;
+}
+
+.programacao-introducao {
+    max-width: 1000px;
+
+    margin-bottom: 35px;
+}
+
+.programacao-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 24px;
+
+    margin-top: 30px;
+}
+
+.programacao-card {
+    background: #fff;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    padding: 30px;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.programacao-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 40px
+        rgba(7, 59, 92, .16);
+}
+
+.programacao-card .codigo-icone {
+    width: 64px;
+    height: 64px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-800),
+            var(--turquesa)
+        );
+
+    color: #fff;
+
+    font-size: 1.05rem;
+
+    font-weight: 900;
+}
+
+.programacao-card h3 {
+    color: var(--azul-900);
+
+    font-size: 1.5rem;
+
+    margin-bottom: 12px;
+}
+
+.programacao-card p {
+    color: var(--texto-suave);
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   14. PERFIL DA PROFESSORA
+   ========================================================= */
+
+.perfil-professora {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 360px)
+        1fr;
+
+    gap: 42px;
+
+    align-items: start;
+}
+
+.foto-professora {
+    position: sticky;
+
+    top: 105px;
+}
+
+.imagem-professora {
+    width: 100%;
+
+    max-width: 340px;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    margin: auto;
+
+    border: 7px solid #fff;
+
+    border-radius: 24px;
+
+    box-shadow: var(--sombra);
+}
+
+.texto-professora {
+    min-width: 0;
+}
+
+.texto-professora h3 {
+    color: var(--azul-900);
+
+    margin-bottom: 8px;
+}
+
+.participacao {
+    margin-top: 30px;
+
+    padding: 28px;
+
+    border-left:
+        6px solid var(--turquesa);
+
+    background: var(--fundo-azul);
+
+    border-radius:
+        0 18px 18px 0;
+}
+
+
+/* =========================================================
+   15. GALERIA DE FOTOS
+   ========================================================= */
+
+.galeria {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 24px;
+
+    margin-top: 35px;
 
     width: 100%;
+}
+
+
+/*
+   Cada foto fica dentro de uma caixa
+   com exatamente o mesmo espaço visual.
+*/
+
+.foto-galeria {
+    width: 100%;
+
+    margin: 0;
+
+    background: #fff;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 24px
+        rgba(7, 59, 92, .12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.foto-galeria:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(7, 59, 92, .17);
+}
+
+
+/*
+   Área da imagem.
+   Todas as imagens possuem a mesma proporção.
+*/
+
+.foto-galeria img {
+    width: 100%;
+
+    height: 270px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #e8f7fa;
+
+    transition:
+        transform .35s ease;
+}
+
+.foto-galeria:hover img {
+    transform: scale(1.03);
+}
+
+
+/*
+   Legendas
+*/
+
+.foto-galeria figcaption {
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 18px;
+
+    text-align: center;
+
+    color: var(--azul-900);
+
+    background: #fff;
+
+    font-size: .95rem;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   GALERIA DO HERO
+   ========================================================= */
+
+.hero .foto-galeria {
+    background: rgba(255, 255, 255, .96);
+
+    border: 4px solid rgba(255, 255, 255, .9);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, .22);
+}
+
+.hero .foto-galeria img {
+    height: 280px;
+}
+
+.hero .foto-galeria figcaption {
+    color: var(--azul-900);
+
+    background: #fff;
+
+    min-height: 60px;
+}
+
+
+/* =========================================================
+   16. GALERIA ANTIGA — COMPATIBILIDADE
+   ========================================================= */
+
+.galeria-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+
     margin-top: 28px;
 }
 
@@ -609,12 +1183,18 @@ strong {
     position: relative;
 
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+
+    border-radius: 18px;
 
     background: #dceff3;
-    border: 4px solid #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(7, 59, 92, 0.12);
+
+    border: 4px solid #fff;
+
+    box-shadow:
+        0 8px 24px
+        rgba(7, 59, 92, .12);
+
+    aspect-ratio: 4 / 3;
 
     cursor: pointer;
 }
@@ -624,186 +1204,325 @@ strong {
     height: 100%;
 
     object-fit: cover;
-    object-position: center;
 
-    transition: transform 0.35s ease;
+    transition:
+        transform .35s ease;
 }
 
 .foto-item:hover img {
-    transform: scale(1.06);
-}
-
-.foto-item figcaption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    padding: 28px 12px 12px;
-
-    color: #ffffff;
-    background: linear-gradient(
-        to top,
-        rgba(7, 59, 92, 0.94),
-        rgba(7, 59, 92, 0)
-    );
-
-    font-size: 0.85rem;
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: center;
+    transform: scale(1.05);
 }
 
 .foto-legenda {
     max-width: 760px;
+
     margin: 30px auto 0;
+
     padding: 25px;
 
     text-align: center;
-    background: #ffffff;
-    border: 1px solid var(--borda);
-    border-radius: 18px;
-    box-shadow: var(--sombra);
-}
 
-.foto-legenda h3 {
-    margin-bottom: 8px;
-    color: var(--azul-900);
+    background: #fff;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 18px;
 }
 
 .foto-legenda p {
-    margin-bottom: 0;
     text-align: center;
+
+    margin-bottom: 0;
 }
 
 
 /* =========================================================
-   15. CARDS DAS ÁREAS
+   17. ROBÓTICA
    ========================================================= */
 
-.cards {
+.robo-ilustracao {
+    min-height: 300px;
+
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
+    place-items: center;
 
-.cards article {
-    display: flex;
-    flex-direction: column;
-
-    min-height: 270px;
-    padding: 30px;
-
-    background: #ffffff;
-    border: 1px solid var(--borda);
     border-radius: var(--raio);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-800),
+            var(--turquesa)
+        );
+
     box-shadow: var(--sombra);
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.cards article:hover {
-    box-shadow: 0 16px 40px rgba(7, 59, 92, 0.16);
-    transform: translateY(-4px);
+.robo-ilustracao span {
+    font-size: 8rem;
+
+    filter:
+        drop-shadow(
+            0 10px 8px
+            rgba(0, 0, 0, .18)
+        );
 }
 
-.cards article h3 {
-    margin: 14px 0 12px;
+.habilidades {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.habilidades span {
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: var(--fundo-azul);
 
     color: var(--azul-900);
-    font-size: 1.4rem;
-    line-height: 1.2;
-}
 
-.cards article p {
-    color: var(--texto-suave);
-}
+    border:
+        1px solid var(--borda);
 
-.cards article a {
-    margin-top: auto;
-    color: var(--azul-700);
-    font-weight: 900;
+    font-weight: 800;
 }
 
 
 /* =========================================================
-   16. RODAPÉ
+   18. RODAPÉ
    ========================================================= */
 
+footer,
 .rodape {
-    padding: 38px 20px;
+    background: var(--azul-900);
 
     color: #eafcff;
-    background: var(--azul-900);
+
+    padding: 38px 20px;
 
     text-align: center;
 }
 
+footer p,
 .rodape p {
-    margin: 5px 0;
     text-align: center;
+
+    margin: 5px 0;
+}
+
+.footer-conteudo {
+    width:
+        min(
+            var(--largura),
+            100%
+        );
+
+    margin: auto;
 }
 
 
 /* =========================================================
-   17. TABLET
+   19. LIGHTBOX
+   ========================================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(3, 22, 35, .92);
+}
+
+.lightbox.ativo {
+    display: flex;
+}
+
+.lightbox img {
+    max-width:
+        min(
+            100%,
+            1100px
+        );
+
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0, 0, 0, .4);
+}
+
+.fechar-lightbox {
+    position: absolute;
+
+    top: 18px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: var(--azul-900);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   20. ANIMAÇÃO
+   ========================================================= */
+
+.animar {
+    opacity: 1 !important;
+
+    transform:
+        translateY(0) !important;
+}
+
+
+/* =========================================================
+   21. TABLET
    ========================================================= */
 
 @media (max-width: 980px) {
+
     .cabecalho {
         padding: 12px 18px;
     }
 
-    .menu a {
-        padding: 9px;
-        font-size: 0.88rem;
+    .header-conteudo {
+        width: calc(100% - 24px);
     }
 
-    .areas-grupos,
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .menu a {
+        padding: 9px;
+
+        font-size: .88rem;
+    }
+
+    .cards,
+    .info-grid,
+    .areas-grupos {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .galeria {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
     }
 
     .galeria-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+    .programacao-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .hero-pagina .hero-conteudo {
+        grid-template-columns:
+            1fr 300px;
+
+        gap: 30px;
+    }
+
+    .hero .foto-galeria img {
+        height: 240px;
     }
 }
 
 
 /* =========================================================
-   18. CELULAR
+   22. CELULAR
    ========================================================= */
 
 @media (max-width: 700px) {
+
     body {
         font-size: 17px;
     }
 
-    .cabecalho {
+    .cabecalho,
+    .header-conteudo {
         min-height: 82px;
     }
 
     .botao-menu {
         display: block;
-        flex-shrink: 0;
     }
 
     .menu {
         position: absolute;
-        top: 100%;
-        right: 0;
+
         left: 0;
+        right: 0;
+
+        top: 100%;
 
         display: none;
+
         flex-direction: column;
+
         align-items: stretch;
+
         gap: 4px;
 
-        padding: 12px 18px 18px;
+        padding:
+            12px 18px 18px;
 
-        background: #ffffff;
-        border-bottom: 1px solid var(--borda);
-        box-shadow: 0 15px 25px rgba(7, 59, 92, 0.12);
+        background: #fff;
+
+        border-bottom:
+            1px solid var(--borda);
+
+        box-shadow:
+            0 15px 25px
+            rgba(7, 59, 92, .12);
     }
 
     .menu.ativo {
@@ -819,12 +1538,14 @@ strong {
         height: 54px;
     }
 
-    .logo-texto h1 {
+    .logo-texto h1,
+    .logo-texto strong {
         font-size: 1.05rem;
     }
 
-    .logo-texto p {
-        font-size: 0.72rem;
+    .logo-texto p,
+    .logo-texto span {
+        font-size: .72rem;
     }
 
     .hero {
@@ -832,71 +1553,137 @@ strong {
     }
 
     .hero-conteudo {
-        width: calc(100% - 36px);
+        width:
+            calc(100% - 36px);
+
         padding: 55px 0;
     }
 
+    .hero h1,
+    .hero h2,
     .hero .titulo-principal {
-        font-size: clamp(2.8rem, 13vw, 4.6rem);
         letter-spacing: -2px;
     }
 
+    .hero .titulo-principal {
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4.6rem
+            );
+    }
+
+    .hero-pagina {
+        min-height: auto;
+    }
+
+    .hero-pagina .hero-conteudo {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 28px;
+    }
+
+    .hero-pagina .foto-galeria {
+        order: 2;
+    }
+
+    .hero-pagina .hero-conteudo > p {
+        order: 3;
+    }
+
+    .hero .foto-galeria img {
+        height: 240px;
+    }
+
     .secao {
-        width: calc(100% - 36px);
+        width:
+            calc(100% - 36px);
+
         padding: 55px 0;
     }
 
     .secao-azul {
-        padding-right: 18px;
         padding-left: 18px;
-    }
-
-    .titulo-secao {
-        gap: 12px;
+        padding-right: 18px;
     }
 
     .info-card {
-        flex-direction: column;
-        gap: 18px;
         padding: 25px;
     }
 
+    .perfil-professora {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .foto-professora {
+        position: static;
+    }
+
+    .imagem-professora {
+        max-width: 300px;
+    }
+
+    .cards,
+    .info-grid,
     .areas-grupos,
-    .cards {
+    .programacao-grid {
         grid-template-columns: 1fr;
     }
 
-    .area-sociologia {
-        grid-column: auto;
+    .galeria {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .foto-galeria img {
+        height: 260px;
     }
 
     .galeria-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
         gap: 12px;
     }
 
-    .foto-item figcaption {
-        padding: 24px 8px 8px;
-        font-size: 0.72rem;
+    .galeria .titulo-secao {
+        grid-template-columns: 1fr;
     }
 
-    .foto-legenda {
-        padding: 20px;
+    .galeria .titulo-secao > span {
+        grid-row: auto;
     }
 
-    .revista-digital img {
-        max-height: 520px;
+    .descricao-galeria {
+        grid-column: auto;
     }
 }
 
 
 /* =========================================================
-   19. CELULARES PEQUENOS
+   23. CELULARES PEQUENOS
    ========================================================= */
 
 @media (max-width: 430px) {
-    .logo-texto p {
+
+    .logo-texto p,
+    .logo-texto span {
         display: none;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
     }
 
     .galeria-grid {
@@ -907,27 +1694,35 @@ strong {
         aspect-ratio: 16 / 10;
     }
 
-    .foto-item figcaption {
-        font-size: 0.88rem;
+    .foto-galeria img {
+        height: 230px;
+    }
+
+    .titulo-secao {
+        gap: 12px;
     }
 
     .titulo-secao > span {
         min-width: 44px;
+
         height: 44px;
     }
 }
 
 
 /* =========================================================
-   20. ACESSIBILIDADE
+   24. REDUÇÃO DE MOVIMENTO
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
         scroll-behavior: auto !important;
+
         transition: none !important;
+
         animation: none !important;
     }
 }
